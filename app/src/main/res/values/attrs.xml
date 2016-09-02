@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SideBar2">
+        <attr name="scaleTime" format="integer"></attr>
+        <attr name="scaleItemCount" format="integer"></attr>
+    </declare-styleable>
+
+</resources>

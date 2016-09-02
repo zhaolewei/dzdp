@@ -1,0 +1,42 @@
+------------
+目录：
+一. sidebar2 使用方法
+二. 汉字拼音排序方法
+-------------
+
+
+
+一.sidebar2 使用方法：
+
+在attr.xml中添加
+        <declare-styleable name="SideBar2">
+            <attr name="scaleTime" format="integer"></attr>
+            <attr name="scaleItemCount" format="integer"></attr>
+        </declare-styleable>
+在对应的布局文件中加入：
+         <com.zlw.dzdp.utils.pinyinsort.SideBar2
+                    android:id="@+id/sidebar2"
+                    android:layout_width="200dp"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="10dp"
+                    android:textColor="#333"
+                    android:textSize="15sp"
+                    sidebar:scaleTime="1" />
+监听sidebar触发事件：
+        //sideBar事件关联：
+        SideBar2 sideBar2 = (SideBar2) findViewById(R.id.sidebar2);
+        sideBar2.setOnStrSelectCallBack(new ISideBarSelectCallBack() {
+            @Override
+            public void onSelectStr(int index, String selectStr) {
+                int position = rvAdapter.getFirstIndex(selectStr);
+
+                if(position != -1){
+                    rv.scrollToPosition(position);
+                }
+            }
+        });
+-----
+二、汉字拼音排序方法：
+   List<SordMode> list = PinyinSortHelper.makeSort(String[] data)  或
+   List<SordMode> list = PinyinSortHelper.makeSort(List<SordMode> list)

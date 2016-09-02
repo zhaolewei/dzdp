@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        applicationId "com.zlw.dzdp"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    task nativeLibsToJar(type: Zip, description: "create a jar archive of the native libs") {
+//        destinationDir file("$projectDir/libs")
+//        baseName "So_BaiduMapLib1"
+//        extension "jar"
+//        from fileTree(dir: "libs", include: "armeabi/liblocSDK7.so")
+//        into "lib"
+//    }
+//    task nativeLibsToJar2(type: Zip, description: "create a jar archive of the native libs") {
+//        destinationDir file("$projectDir/libs")
+//        baseName "So_AMapLib1"
+//        extension "jar"
+//        from fileTree(dir: "libs", include: "armeabi/libgdinamapv4sdk752.so")
+//        into "lib"
+//    }
+//    task nativeLibsToJar3(type: Zip, description: "create a jar archive of the native libs") {
+//        destinationDir file("$projectDir/libs")
+//        baseName "So_AMapLib2"
+//        extension "jar"
+//        from fileTree(dir: "libs", include: "armeabi/libgdinamapv4sdk752ex.so,armeabi/libtbt3631.so,armeabi/libwtbt144.so")
+//        into "lib"
+//    }
+//    tasks.withType(JavaCompile) {
+//        compileTask ->
+//            compileTask.dependsOn(nativeLibsToJar)
+//            compileTask.dependsOn(nativeLibsToJar2)
+//            compileTask.dependsOn(nativeLibsToJar3)
+//
+//
+//    }
+
+
+
+}
+android{
+    sourceSets{
+        main{
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.squareup.picasso:picasso:2.3.2'
+    compile project(':myrecyclerview-lib')
+}

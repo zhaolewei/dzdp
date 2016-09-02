@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/goods_detail_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffaa25">
+
+        <ImageView
+            android:id="@+id/city_top_iv_back"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/city_top_iv_back"
+            android:gravity="center_vertical"
+            android:text="商品详情"
+            android:textColor="#fff" />
+
+
+        <ImageView
+            android:id="@+id/goods_detail_top_share"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:src="@drawable/icon_share" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/goods_detail_top_share"
+            android:padding="5dp"
+            android:src="@drawable/icon_collect" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/goods_detail_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="￥0.00"
+            android:textColor="#ff5a00"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="/"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/delete_line"
+            android:gravity="center_vertical"
+            android:text="￥0.00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:background="#ffaa00"
+            android:text="立即购买" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/goods_detail_bottom_bar"
+        android:layout_below="@id/goods_detail_top_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/test_goods_img1" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="#66aaaaaa"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="点击图片查看大图"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+
+
+            </RelativeLayout>
+
+            <!--商品简介-start-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="香酥板栗饼：板栗饼8只，无需预约"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="售价仅需7.8元，市场价12.5的板栗饼8只,无需预约售价仅需7.8元，市场价12.5的板栗饼8只,无需预约售价仅需7.8元，市场价12.5的板栗饼8只,无需预约售价仅需7.8元，市场价12.5的板栗饼8只,无需预约售价仅需7.8元，市场价12.5的板栗饼8只,无需预约" />
+
+
+                <!--承诺-start-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <!--ok1-->
+                    <ImageView
+                        android:id="@+id/goods_detail_ok1_img"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="2dp"
+                        android:src="@drawable/icon_ok" />
+
+                    <TextView
+                        android:id="@+id/goods_detail_ok1_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_toRightOf="@id/goods_detail_ok1_img"
+                        android:gravity="center_vertical"
+                        android:text="是否支持随时退货" />
+
+                    <!--ok2-->
+                    <ImageView
+                        android:id="@+id/goods_detail_ok2_img"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/goods_detail_ok1_tv"
+                        android:padding="2dp"
+                        android:src="@drawable/icon_ok" />
+
+                    <TextView
+                        android:id="@+id/goods_detail_ok2_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_toRightOf="@id/goods_detail_ok2_img"
+                        android:gravity="center_vertical"
+                        android:text="支持过期退款" />
+
+                    <!--ok3-->
+                    <ImageView
+                        android:id="@+id/goods_detail_ok3_img"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_below="@id/goods_detail_ok1_img"
+                        android:padding="2dp"
+                        android:src="@drawable/icon_time" />
+
+                    <TextView
+                        android:id="@+id/goods_detail_ok3_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_alignTop="@id/goods_detail_ok3_img"
+                        android:layout_toRightOf="@id/goods_detail_ok3_img"
+                        android:gravity="center_vertical"
+                        android:text="3天以上" />
+
+                    <!--ok4-->
+                    <ImageView
+                        android:id="@+id/goods_detail_ok4_img"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignLeft="@id/goods_detail_ok2_img"
+                        android:layout_alignTop="@id/goods_detail_ok3_img"
+                        android:padding="2dp"
+                        android:src="@drawable/icon_scan" />
+
+                    <TextView
+                        android:id="@+id/goods_detail_ok4_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_alignTop="@id/goods_detail_ok3_img"
+                        android:layout_toRightOf="@id/goods_detail_ok4_img"
+                        android:gravity="center_vertical"
+                        android:text="0人购买" />
+                </RelativeLayout>
+                <!--承诺-end-->
+
+
+            </LinearLayout>
+            <!--商品简介 -end-->
+            <!--商家信息-->
+            <!--商品详情-->
+            <!--温馨提示-->
+            <!--评论信息-->
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</RelativeLayout>

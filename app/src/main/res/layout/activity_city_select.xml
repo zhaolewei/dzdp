@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><!--选择城市-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sidebar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffaa25">
+
+        <ImageView
+            android:id="@+id/city_top_iv_back"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/city_top_iv_back"
+            android:gravity="center_vertical"
+            android:text="选择城市"
+            android:textColor="#fff" />
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:src="@drawable/icon_flush" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/city_select_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.zlw.dzdp.utils.pinyinsort.SideBar2
+            android:id="@+id/sidebar2"
+            android:layout_width="200dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"
+            android:textColor="#333"
+            android:textSize="15sp"
+            sidebar:scaleTime="1" />
+    </RelativeLayout>
+</LinearLayout>
